@@ -20,11 +20,11 @@ app.get("/:word/echo", (req, res) => {
 });
 app.route("/name").get((req, res) => {
   res.send({
-    name : req.query.firstname + " " + req.query.lastname
+    name : req.query.first + " " + req.query.last
   });
 }).post((req, res) => {
   res.send({
-    name : req.query.firstname + " " + req.query.lastname
+    name : req.query.first + " " + req.query.last
   });
 });
 app.get("/now", (req, res, next) => {
