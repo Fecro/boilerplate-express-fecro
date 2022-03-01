@@ -18,6 +18,15 @@ app.get("/:word/echo", (req, res) => {
     echo : req.params.word
   });
 });
+app.route("/name").get((req, res) => {
+  res.send({
+    name : req.query.firstname + " " + req.query.lastname
+  });
+}).post((req, res) => {
+  res.send({
+    name : req.query.firstname + " " + req.query.lastname
+  });
+});
 app.get("/now", (req, res, next) => {
   req.time = new Date().toString();
   next();
@@ -34,7 +43,7 @@ app.get("/json", (req, res) => {
   } else {
     res.json({
       "message": "Hello json"
-  });
+    });
   }
 });
 
