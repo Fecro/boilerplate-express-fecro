@@ -26,7 +26,7 @@ app.route("/name").get((req, res) => {
   });
 }).post((req, res) => {
   res.send({
-    name : req.query.first + " " + req.query.last
+    name : req.body.first + " " + req.body.last
   });
 });
 app.get("/now", (req, res, next) => {
