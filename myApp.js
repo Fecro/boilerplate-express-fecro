@@ -13,6 +13,11 @@ app.use("/public", express.static(stylePath));
 app.get("/", (req, res) => {
   res.sendFile(absolutePath);
 });
+app.get("/:word/echo", (req, res) => {
+  res.send({
+    echo : req.params.word
+  });
+});
 app.get("/now", (req, res, next) => {
   req.time = new Date().toString();
   next();
