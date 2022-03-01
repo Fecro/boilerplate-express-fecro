@@ -5,7 +5,7 @@ var app = express();
 // Variables
 var absolutePath = __dirname + "/views/index.html";
 var stylePath = __dirname + "/public";
-app.use("*", (req, res, next) => {
+app.use((req, res, next) => {
   console.log(req.method + " " + req.path + " - " + req.ip);
   next();
 });
