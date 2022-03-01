@@ -1,5 +1,6 @@
 // Modules
 var express = require('express');
+var bodyParser = require('body-parser');
 // Initialize Object
 var app = express();
 // Variables
@@ -10,6 +11,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use("/public", express.static(stylePath));
+app.use(bodyParser.urlencoded({extended : false}));
 app.get("/", (req, res) => {
   res.sendFile(absolutePath);
 });
